@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Login & Schedule</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .login-container, .schedule-container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #438D80;
+        }
+
+        input[type="text"], input[type="password"], input[type="submit"], button {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        input[type="submit"], button {
+            background-color: #438D80;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        input[type="submit"]:hover, button:hover {
+            background-color: #880029;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .schedule-table th, .schedule-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .schedule-table th {
+            background-color: #438D80;
+            color: white;
+        }
+
+        .edit-btn, .save-btn {
+            background-color: #438D80;
+            color: white;
+            padding: 8px 12px;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+            border-radius: 4px;
+        }
+
+        .edit-btn:hover, .save-btn:hover {
+            background-color: #880029;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        label {
+            font-size: 16px;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #438D80;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #880029;
+        }
+
+    </style>
+</head>
+<body>
+        <div class="navbar">
+            <div class="navbar-logo">Hospital</div>
+            <div class="navbar-links">
+                <a href="Home.html">Home</a>
+                <a href="AboutUs.html">About Us</a>
+                <a href="DoctorProfile.html">Doctors</a>
+                <a href="doctorschedule.html">Book Appointment</a>
+                <a href="HealthCheckup.html">Health CheckUp Packages</a>
+                <a href="Blog.html">Blogs</a>
+                <a href="Contact.html">Contact Us</a>
+                <a href="SignIn.html">Admin Sign In</a>
+            </div>
+        </div>
+<!-- Login Form -->
+<div class="login-container" id="loginForm">
+    <h2>Doctor Login</h2>
+    <form onsubmit="login(event)">
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <input type="submit" value="Login">
+    </form>
+</div>
+
+<!-- Schedule Section -->
+<div class="container hidden" id="scheduleSection">
+    <h2>Doctor's Schedule</h2>
+    <table class="schedule-table" id="scheduleTable">
+        <thead>
+            <tr>
+                <th>Day</th>
+                <th>Time</th>
+                <th>Availability</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Monday</td>
+                <td>10:00 AM – 02:00 PM</td>
+                <td id="availability-monday">Available</td>
+                <td>
+                    <button class="edit-btn" onclick="editSchedule('monday')">Edit</button>
+                    <button class="save-btn hidden" onclick="saveSchedule('monday')">Save</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Wednesday</td>
+                <td>11:00 AM – 04:00 PM</td>
+                <td id="availability-wednesday">Available</td>
+                <td>
+                    <button class="edit-btn" onclick="editSchedule('wednesday')">Edit</button>
+                    <button class="save-btn hidden" onclick="saveSchedule('wednesday')">Save</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Friday</td>
+                <td>09:00 AM – 01:00 PM</td>
+                <td id="availability-friday">Not Available</td>
+                <td>
+                    <button class="edit-btn" onclick="editSchedule('friday')">Edit</button>
+                    <button class="save-btn hidden" onclick="saveSchedule('friday')">Save</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button onclick="logout()">Logout</button>
+</div>
+
+<div class="container hidden" id="patientRecord">
+    <h2>Enter Patient Report</h2>
+    <form>
+        <label for="patientName">Patient Name:</label>
+        <input type="text" id="patientName" name="patientName" placeholder="Enter Patient Name" required />
+
+        <label for="patientID">Patient ID:</label>
+        <input type="text" id="patientID" name="patientID" placeholder="Enter Patient ID" required />
+
+        <label for="patientAge">Age:</label>
+        <input type="number" id="patientAge" name="patientAge" placeholder="Enter Age" required />
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<!-- JavaScript -->
+<script>
+    const doctors = {
+        "abdulsalam": "1234",
+        "anjananath": "5678",
+        "priyasharma": "91011",
+        "rahulnair": "1213",
+        "arjunmenon": "1415",
+        "meeraiyer": "1617",
+        "ravikumar": "1819",
+        "snehareddy": "2021"
+    };
+
+    // Login Function
+    function login(event) {
+    event.preventDefault();
+
+    const username = document.getElementById("username").value.toLowerCase();
+    const password = document.getElementById("password").value;
+
+    if (doctors[username] && doctors[username] === password) {
+        document.getElementById("loginForm").classList.add("hidden");
+        document.getElementById("scheduleSection").classList.remove("hidden");
+        document.getElementById("patientRecord").classList.remove("hidden"); // Show Patient Records
+        alert("Doctor login successful!");
+    } else {
+        alert("Invalid username or password");
+    }
+}
+
+
+    function logout() {
+        document.getElementById("loginForm").classList.remove("hidden");
+        document.getElementById("scheduleSection").classList.add("hidden");
+        document.getElementById("patientRecord").classList.add("hidden"); // Hide Patient Records
+    }
+
+    // Edit Schedule Function
+    function editSchedule(day) {
+        let availability = document.getElementById(`availability-${day}`);
+        let currentValue = availability.textContent;
+
+        let newValue = prompt(`Edit availability for ${day} (e.g., Available / Not Available):`, currentValue);
+        if (newValue !== null) {
+            availability.textContent = newValue;
+        }
+    }
+
+    // Save Schedule Function
+    function saveSchedule(day) {
+        let availability = document.getElementById(`availability-${day}`);
+        alert(`Schedule for ${day} saved as: ${availability.textContent}`);
+    }
+</script>
+
+</body>
+</html>
+
+
+
+

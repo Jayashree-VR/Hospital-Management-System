@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doctor Appointment Booking</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .doctor-list {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .doctor-card1 {
+            background-color: #ffffff;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .doctor-info1 {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .doctor-info1 img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+        }
+
+        .doctor-details1 h3 {
+            margin: 0;
+        }
+
+        .doctor-details1 h3 a {
+            color: #004d66;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .doctor-details1 h3 a:hover {
+            color: #ff8c00;
+        }
+
+        .doctor-details1 p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #777;
+        }
+
+        .doctor-time {
+            text-align: center;
+            color: #ff8c00;
+            font-size: 14px;
+        }
+
+        .book-btn {
+            background-color: #004d66;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .book-btn:hover {
+            background-color: #00334d;
+        }
+
+        @media (max-width: 768px) {
+            .doctor-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .help-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 20px auto; /* Centers horizontally */
+        padding: 20px;
+        width: 300px;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        text-align: center;
+    }
+
+    .help-section h3 {
+        margin: 0;
+        font-size: 20px;
+        color: #333;
+    }
+
+    .help-section p {
+        margin: 5px 0 0;
+        font-size: 18px;
+        color: #555;
+    }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="navbar-logo">Hospital</div>
+        <div class="navbar-links">
+            <a href="Home.html">Home</a>
+            <a href="AboutUs.html">About Us</a>
+            <a href="DoctorProfile.html">Doctors</a>
+            <a href="BookAppointment_index.html">Book Appointment</a>
+            <a href="HealthCheckup.html">Health CheckUp Packages</a>
+            <a href="Blog.html">Blogs</a>
+            <a href="Contact.html">Contact Us</a>
+            <a href="SignIn.htmlS">Admin Sign In</a>
+        </div>
+    </div>
+
+
+
+<!-- Doctor Profiles -->
+<div class="doctor-list">
+    <!-- Doctor 1 -->
+    <div class="doctor-card1">
+        <div class="doctor-info1">
+            <img src="Images/doctor1.jpg" alt="Doctor">
+            <div class="doctor-details1">
+                <h3><a href="doctor1.html">Dr Abdul Salam</a></h3>
+                <p>Orthopaedic Surgeon</p>
+                <p>Qualifications: M.S.(Ortho), MRCS, M.D. (USA)</p>
+            </div>
+        </div>
+        <div>
+            <div class="doctor-time">MON–SAT<br>(06:00 PM–08:00 PM)</div>
+            <a href="appointment.html?doctor=Dr%20Abdul%20Salam" class="book-btn">Book Appointment</a>
+        </div>
+    </div>
+
+    <!-- Doctor 2 -->
+    <div class="doctor-card1">
+        <div class="doctor-info1">
+            <img src="Images/doctor2.jpg" alt="Doctor">
+            <div class="doctor-details1">
+                <h3><a href="doctor2.html">Dr Anjana G Nath</a></h3>
+                <p>Dental</p>
+                <p>Qualifications: BDS</p>
+            </div>
+        </div>
+        <div>
+            <div class="doctor-time">MON–SAT<br>(10:30 AM–05:00 PM)</div>
+            <a href="appointment.html?doctor=Dr%20Anjana%20G%20Nath" class="book-btn">Book Appointment</a>
+        </div>
+    </div>
+
+    <!-- Doctor 3 -->
+    <div class="doctor-card1">
+        <div class="doctor-info1">
+            <img src="Images/doctor3.webp" alt="Doctor">
+            <div class="doctor-details1">
+                <h3><a href="doctor3.html">Dr Priya Sharma</a></h3>
+                <p>Cardiologist</p>
+                <p>Qualifications: MBBS, MD</p>
+            </div>
+        </div>
+        <div>
+            <div class="doctor-time">TUE–FRI<br>(09:00 AM–01:00 PM)</div>
+            <a href="appointment.html?doctor=Dr%20Priya%20Sharma" class="book-btn">Book Appointment</a>
+        </div>
+    </div>
+
+    <!-- Doctor 4 -->
+    <div class="doctor-card1">
+        <div class="doctor-info1">
+            <img src="Images/doctor4.jpg" alt="Doctor">
+            <div class="doctor-details1">
+                <h3><a href="doctor4.html">Dr Rahul Nair</a></h3>
+                <p>Dermatologist</p>
+                <p>Qualifications: MBBS, DDVL</p>
+            </div>
+        </div>
+        <div>
+            <div class="doctor-time">MON–THU<br>(03:00 PM–06:00 PM)</div>
+            <a href="appointment.html?doctor=Dr%20Rahul%20Nair" class="book-btn">Book Appointment</a>
+        </div>
+    </div>
+
+    <!-- Doctor 5 -->
+    <div class="doctor-card1">
+        <div class="doctor-info1">
+            <img src="Images/doctor5.jpg" alt="Doctor">
+            <div class="doctor-details1">
+                <h3><a href="doctor5.html">Dr Arjun Menon</a></h3>
+                <p>General Physician</p>
+                <p>Qualifications: MBBS</p>
+            </div>
+        </div>
+        <div>
+            <div class="doctor-time">MON–FRI<br>(08:00 AM–12:00 PM)</div>
+            <a href="appointment.html?doctor=Dr%20Arjun%20Menon" class="book-btn">Book Appointment</a>
+        </div>
+    </div>
+
+    <!-- Doctor 6 -->
+    <div class="doctor-card1">
+        <div class="doctor-info1">
+            <img src="Images/doctor6.jpg" alt="Doctor">
+            <div class="doctor-details1">
+                <h3><a href="doctor6.html">Dr Meera Iyer</a></h3>
+                <p>Neurologist</p>
+                <p>Qualifications: MBBS, DM</p>
+            </div>
+        </div>
+        <div>
+            <div class="doctor-time">WED–SAT<br>(10:00 AM–02:00 PM)</div>
+            <a href="appointment.html?doctor=Dr%20Meere%20Iyer" class="book-btn">Book Appointment</a>
+        </div>
+    </div>
+
+    <!-- Doctor 7 -->
+    <div class="doctor-card1">
+        <div class="doctor-info1">
+            <img src="Images/doctor7.jpg" alt="Doctor">
+            <div class="doctor-details1">
+                <h3><a href="doctor7.html">Dr Ravi Kumar</a></h3>
+                <p>Paediatrician</p>
+                <p>Qualifications: MBBS, DCH</p>
+            </div>
+        </div>
+        <div>
+            <div class="doctor-time">MON–FRI<br>(04:00 PM–08:00 PM)</div>
+            <a href="appointment.html?doctor=Dr%20Ravi%20Kumar" class="book-btn">Book Appointment</a>
+        </div>
+    </div>
+
+    <!-- Doctor 8 -->
+    <div class="doctor-card1">
+        <div class="doctor-info1">
+            <img src="Images/doctor8.jpg" alt="Doctor">
+            <div class="doctor-details1">
+                <h3><a href="doctor8.html">Dr Sneha Reddy</a></h3>
+                <p>Gynaecologist</p>
+                <p>Qualifications: MBBS, MD</p>
+            </div>
+        </div>
+        <div>
+            <div class="doctor-time">TUE–SAT<br>(11:00 AM–03:00 PM)</div>
+            <a href="appointment.html?doctor=Dr%20Sneha%20Reddy" class="book-btn">Book Appointment</a>
+        </div>
+    </div>
+</div>
+
+<!-- Help Section -->
+<div class="help-section">
+    <h3>Need Help?</h3>
+    <p>+91 98765 43210</p>
+</div>
+
+</body>
+</html>

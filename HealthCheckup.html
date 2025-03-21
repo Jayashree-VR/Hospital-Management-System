@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Health Checkup Packages</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 40px auto;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 32px;
+            color: #1e88e5;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        /* Package Grid */
+        .package-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        /* Package Card Styling */
+        .card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #1e88e5;
+            margin-bottom: 12px;
+            transition: color 0.3s ease;
+        }
+
+        .card-title:hover {
+            color: #1565c0;
+        }
+
+        .card-text {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .card-price {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 16px;
+        }
+
+        /* Button Styling */
+        .btn-primary {
+            display: inline-block;
+            padding: 10px 16px;
+            background-color: #1e88e5;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-align: center;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #1565c0;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #1e1e1e;
+            color: #fff;
+            text-align: center;
+            padding: 16px;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="navbar-logo">Hospital</div>
+        <div class="navbar-links">
+            <a href="Home.html">Home</a>
+            <a href="AboutUs.html">About Us</a>
+            <a href="DoctorProfile.html">Doctors</a>
+            <a href="doctorschedule.html">Book Appointment</a>
+            <a href="HealthCheckup.html">Health CheckUp Packages</a>
+            <a href="Blog.html">Blogs</a>
+            <a href="Contact.html">Contact Us</a>
+            <a href="SignIn.html">Admin Sign In</a>
+        </div>
+    </div>
+<!-- Packages Section -->
+<div class="container">
+    <h2>Our Health Checkup Packages</h2>
+    <p>Choose a package that fits your health needs.</p>
+
+    <div class="package-grid">
+        <!-- Package 1 -->
+        <div class="card">
+            <img src="Images/package1.jpg" alt="Basic Health Package">
+            <div class="card-body">
+                <h5 class="card-title">Basic Health Package</h5>
+                <p class="card-text">Includes Blood Test, BP Check, and General Consultation.</p>
+                <p class="card-price">Price: ₹999</p>
+                <a href="basichealthpackage.html" class="btn-primary">Learn More</a>
+            </div>
+        </div>
+
+        <!-- Package 2 -->
+        <div class="card">
+            <img src="Images/package2.jpg" alt="Advanced Health Package">
+            <div class="card-body">
+                <h5 class="card-title">Advanced Health Package</h5>
+                <p class="card-text">Includes ECG, X-ray, Blood Sugar Test, and Doctor Consultation.</p>
+                <p class="card-price">Price: ₹1999</p>
+                <a href="advancedpackage.html" class="btn-primary">Learn More</a>
+            </div>
+        </div>
+
+        <!-- Package 3 -->
+        <div class="card">
+            <img src="Images/package3.jpg" alt="Full Body Checkup">
+            <div class="card-body">
+                <h5 class="card-title">Full Body Checkup</h5>
+                <p class="card-text">Includes Full Blood Panel, MRI, CT Scan, and Doctor Consultation.</p>
+                <p class="card-price">Price: ₹4999</p>
+                <a href="fullbody.html" class="btn-primary">Learn More</a>
+            </div>
+        </div>
+
+        <!-- Package 4 -->
+        <div class="card">
+            <img src="Images/package4.jpg" alt="Diabetes Care Package">
+            <div class="card-body">
+                <h5 class="card-title">Diabetes Care Package</h5>
+                <p class="card-text">Includes Blood Sugar Test, HbA1c, Kidney Function Test, and Diet Consultation.</p>
+                <p class="card-price">Price: ₹1499</p>
+                <a href="diabetespackage.html" class="btn-primary">Learn More</a>
+            </div>
+        </div>
+
+        <!-- Package 5 -->
+        <div class="card">
+            <img src="Images/package5.jpg" alt="Heart Checkup Package">
+            <div class="card-body">
+                <h5 class="card-title">Heart Checkup Package</h5>
+                <p class="card-text">Includes ECG, Lipid Profile, Chest X-ray, and Cardiologist Consultation.</p>
+                <p class="card-price">Price: ₹2499</p>
+                <a href="heartpackage.html" class="btn-primary">Learn More</a>
+            </div>
+        </div>
+
+        <!-- Package 6 -->
+        <div class="card">
+            <img src="Images/package6.jpg" alt="Senior Citizen Health Package">
+            <div class="card-body">
+                <h5 class="card-title">Senior Citizen Health Package</h5>
+                <p class="card-text">Includes Complete Blood Test, Bone Density Test, Eye Checkup, and Geriatric Consultation.</p>
+                <p class="card-price">Price: ₹2999</p>
+                <a href="seniorcitizen.html" class="btn-primary">Learn More</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    &copy; 2025 Hospital Management. All Rights Reserved.
+</footer>
+
+</body>
+</html>
